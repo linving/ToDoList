@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">微清单</string>
+    <string name="action_settings">设置</string>
+    <string name="all">全部</string>
+    <string name="to_delete">删除</string>
+    <string name="to_done">完成</string>
+    <string name="title_activity_edit">EditActivity</string>
+    <string name="hello_world">Hello world!</string>
+
+</resources>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/item_height"
+    android:gravity="center_vertical|left"
+    >
+     <!--<TextView-->
+         <!--android:id="@+id/to_done"-->
+         <!--android:background="@color/to_done"-->
+         <!--android:layout_width="100dp"-->
+         <!--android:gravity="right|center_vertical"-->
+         <!--android:layout_height="match_parent"-->
+         <!--android:text="完成     "-->
+
+         <!--/>-->
+
+    <TextView
+        android:id="@+id/item_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_height"
+        android:textSize="@dimen/list_content_text"
+        android:textColor="@color/content_text"
+        android:gravity="center_vertical|left"
+        android:text="test"
+        android:background="@drawable/content_background_x"
+        android:paddingLeft="@dimen/abs__dropdownitem_text_padding_left"
+         />
+
+        <!--<TextView-->
+         <!--android:id="@+id/to_delete"-->
+         <!--android:background="@color/to_delete"-->
+         <!--android:layout_width="100dp"-->
+         <!--android:gravity="left|center_vertical"-->
+         <!--android:layout_height="match_parent"-->
+         <!--android:text="     删除"-->
+
+         <!--/>-->
+
+</LinearLayout>

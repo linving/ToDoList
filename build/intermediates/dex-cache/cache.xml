@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="E:\android\sdk\extras\android\m2repository\com\android\support\support-v4\18.0.0\support-v4-18.0.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="44ec51e9d395a47aab135e5e1b556c0007442156">
+        <dex dex="E:\androidworkspace\MyApplication3\app\build\intermediates\pre-dexed\debug\support-v4-18.0.0-1ae302d0a823d4a9058371f11fbd3de24610a3a3.jar" />
+    </item>
+    <item
+        jar="E:\androidworkspace\ToDoList\app\build\intermediates\exploded-aar\ToDoList.extras\slidingmenu\unspecified\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="1bb3ec7d5d1d9cb0a3d1b6236e481aa738b0d8b5">
+        <dex dex="E:\androidworkspace\ToDoList\app\build\intermediates\pre-dexed\debug\classes-157592902da09cc48e880f6a19874057a6c9fe25.jar" />
+    </item>
+    <item
+        jar="E:\androidworkspace\ToDoList\app\build\intermediates\exploded-aar\ToDoList.extras\actionbarsherlock\unspecified\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="7a0cd6b99c61ab090be3a54231ac8c0945ea3b8e">
+        <dex dex="E:\androidworkspace\ToDoList\app\build\intermediates\pre-dexed\debug\classes-8747ddaae7a3f504a16e31ced065ce91aa2b04ba.jar" />
+    </item>
+    <item
+        jar="E:\androidworkspace\MyApplication3\app\build\intermediates\exploded-aar\MyApplication3.extras\slidingmenu\unspecified\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="8b03c1362739b6d6f6818425d544de26c40d6d95">
+        <dex dex="E:\androidworkspace\MyApplication3\app\build\intermediates\pre-dexed\debug\classes-880d763c2fa9b970c658e2413f7713d4168bbcb9.jar" />
+    </item>
+    <item
+        jar="E:\androidworkspace\MyApplication3\app\build\intermediates\exploded-aar\MyApplication3.extras\actionbarsherlock\unspecified\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="578ceb117fd79b7409dff72c1b7e6234093ea58a">
+        <dex dex="E:\androidworkspace\MyApplication3\app\build\intermediates\pre-dexed\debug\classes-0e9986ec35162c185d0de7dfb223b2bb043eefc1.jar" />
+    </item>
+
+</items>

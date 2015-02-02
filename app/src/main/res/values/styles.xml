@@ -1,0 +1,31 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <!--<style name="AppTheme" parent="Theme.Sherlock.Light">-->
+        <!--&lt;!&ndash; Customize your theme here. &ndash;&gt;-->
+    <!--</style>-->
+
+    <style name="myTheme" parent="Theme.Sherlock.Light">
+        <!--<item name="homeAsUpIndicator">@drawable/new_indicator</item>-->
+        <!--<item name="android:homeAsUpIndicator">@drawable/new_indicator</item>-->
+        <!--<item name="actionDropDownStyle">@style/mySpinner</item>-->
+        <item name="actionBarStyle">@style/myActionbar</item>
+        <!--<item name="android:actionBarTheme"-->
+        <!--<item name="actionModeBackground">@drawable/abs__cab_background_top_holo_dark</item>-->
+        <!--<item name="actionModeSplitBackground">@drawable/abs__cab_background_bottom_holo_dark</item>-->
+    </style>
+
+    <style name="myActionbar" parent="Widget.Sherlock.Light.ActionBar.Solid">
+        <item name="titleTextStyle">@style/TextAppearance.Sherlock.Widget.ActionBar.Title</item>
+        <!--<item name="background">@drawable/abs__ab_solid_light_holo</item>-->
+        <!--<item name="backgroundStacked">@drawable/abs__ab_stacked_solid_light_holo</item>-->
+        <!--<item name="backgroundSplit">@drawable/abs__ab_bottom_solid_light_holo</item>-->
+        <item name="divider">?attr/dividerVertical</item>
+        <item name="itemPadding">8dip</item>
+    </style>
+
+
+    <!--<style name="mySpinner" parent="Widget.Sherlock.Light.Spinner.DropDown.ActionBar">-->
+        <!--<item name="android:dropDownSelector">@drawable/spinner_dropdown_selector</item>-->
+    <!--</style>-->
+</resources>
