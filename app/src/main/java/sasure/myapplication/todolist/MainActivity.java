@@ -71,10 +71,9 @@ public class MainActivity extends SlidingListActivity implements slidecutListVie
         initaddButton();
     }
 
+
     private void initField()
     {
-
-
         mContext = this;
         mInflater = LayoutInflater.from(mContext);
         mListItems = new ArrayList<>();

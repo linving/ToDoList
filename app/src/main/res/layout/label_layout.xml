@@ -12,5 +12,6 @@
         android:textColor="@color/label_text"
         android:text="test"
         />
+        />
 </LinearLayout>
 
