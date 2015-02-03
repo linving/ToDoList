@@ -7,6 +7,6 @@
     android:ellipsize="marquee"
     android:singleLine="true"
     android:text="test"
-    android:textColor="@android:color/black"
+    android:textColor="@color/label_text"
     android:gravity="center"
     />

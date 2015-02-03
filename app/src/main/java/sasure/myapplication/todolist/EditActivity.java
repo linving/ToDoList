@@ -21,7 +21,7 @@ public class EditActivity extends Activity {
     private void initActionbar()
     {
         getActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM | ActionBar.DISPLAY_HOME_AS_UP | ActionBar.DISPLAY_SHOW_TITLE);
-        getActionBar().setBackgroundDrawable(getResources().getDrawable(R.drawable.actionbar_background));
+    //    getActionBar().setBackgroundDrawable(getResources().getDrawable(R.drawable.actionbar_background));
     }
 
     @Override

@@ -8,4 +8,5 @@
     android:ellipsize="marquee"
     android:gravity="center"
     android:background="@drawable/spinner_dropdown_selector"
+    android:textColor="@color/label_text"
     />

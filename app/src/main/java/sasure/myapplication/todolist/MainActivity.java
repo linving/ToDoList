@@ -96,7 +96,7 @@ public class MainActivity extends SlidingListActivity implements slidecutListVie
         mySpinner = (Spinner) myView.findViewById(R.id.myspinner);
         mySpinner.setAdapter(list);
 
-        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM | ActionBar.DISPLAY_HOME_AS_UP | ActionBar.DISPLAY_SHOW_TITLE);//设置显示的选项
+   //     actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM | ActionBar.DISPLAY_HOME_AS_UP | ActionBar.DISPLAY_SHOW_TITLE);//设置显示的选项
 
         ActionBar.LayoutParams layoutParams = new ActionBar.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.MATCH_PARENT);
         layoutParams.gravity = Gravity.RIGHT; // set your layout's gravity to 'right'
@@ -105,7 +105,7 @@ public class MainActivity extends SlidingListActivity implements slidecutListVie
 
 //        BitmapDrawable bg = (BitmapDrawable) getResources().getDrawable(R.drawable.bg_striped);//设置ActionBar的背景
 //        bg.setTileModeXY(Shader.TileMode.REPEAT, Shader.TileMode.REPEAT);
-        actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.actionbar_background));
+   //     actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.actionbar_background));
 
 //      BitmapDrawable bgSplit = (BitmapDrawable)getResources().getDrawable(R.drawable.bg_striped_split_img);
 //      bgSplit.setTileModeXY(Shader.TileMode.REPEAT, Shader.TileMode.REPEAT);

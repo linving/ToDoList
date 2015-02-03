@@ -5,7 +5,8 @@
     <color name="list_item">#ffffffff</color>
     <color name="label_text">#96918d</color>
     <color name="content_text">#383737</color>
-    <color name="selector">#d4dcdd</color>
+    <color name="press">#d7d7d8</color>
+    <color name="no_press">#fff3f3f3</color>
     <!--<color name="to_delete">#ef8e92</color>-->
     <!--<color name="to_done">#8ccdbe</color>-->
 </resources>

@@ -9,7 +9,7 @@
         <!--<item name="homeAsUpIndicator">@drawable/new_indicator</item>-->
         <!--<item name="android:homeAsUpIndicator">@drawable/new_indicator</item>-->
         <!--<item name="actionDropDownStyle">@style/mySpinner</item>-->
-        <item name="actionBarStyle">@style/myActionbar</item>
+        <item name="android:actionBarStyle">@style/Widget.Styled.ActionBar</item>
         <!--<item name="android:textViewStyle">@style/AppTheme.Widget.TextView</item>-->
         <!-- Action Bar Theme -->
         <!--<item name="android:actionBarTheme"-->
@@ -17,14 +17,14 @@
         <!--<item name="actionModeSplitBackground">@drawable/abs__cab_background_bottom_holo_dark</item>-->
     </style>
 
-    <style name="myActionbar" parent="Widget.Sherlock.Light.ActionBar.Solid">
-        <item name="titleTextStyle">@style/TextAppearance.Sherlock.Widget.ActionBar.Title</item>
-        <!--<item name="background">@drawable/abs__ab_solid_light_holo</item>-->
-        <!--<item name="backgroundStacked">@drawable/abs__ab_stacked_solid_light_holo</item>-->
-        <!--<item name="backgroundSplit">@drawable/abs__ab_bottom_solid_light_holo</item>-->
-        <item name="divider">?attr/dividerVertical</item>
-        <item name="itemPadding">8dip</item>
-    </style>
+    <!--<style name="myActionbar" parent="Widget.Sherlock.Light.ActionBar.Solid">-->
+        <!--<item name="titleTextStyle">@style/TextAppearance.Sherlock.Widget.ActionBar.Title</item>-->
+        <!--&lt;!&ndash;<item name="background">@drawable/abs__ab_solid_light_holo</item>&ndash;&gt;-->
+        <!--&lt;!&ndash;<item name="backgroundStacked">@drawable/abs__ab_stacked_solid_light_holo</item>&ndash;&gt;-->
+        <!--&lt;!&ndash;<item name="backgroundSplit">@drawable/abs__ab_bottom_solid_light_holo</item>&ndash;&gt;-->
+        <!--<item name="divider">?attr/dividerVertical</item>-->
+        <!--<item name="itemPadding">8dip</item>-->
+    <!--</style>-->
 
     <!--<style name="AppTheme.Widget.TextView" parent="android:Widget.Holo.Light.TextView">-->
         <!--&lt;!&ndash; Custom Attr&ndash;&gt;-->
@@ -34,4 +34,15 @@
     <!--<style name="mySpinner" parent="Widget.Sherlock.Light.Spinner.DropDown.ActionBar">-->
         <!--<item name="android:dropDownSelector">@drawable/spinner_dropdown_selector</item>-->
     <!--</style>-->
+
+    <style name="Widget.Styled.ActionBar" parent="Widget.Sherlock.Light.ActionBar.Solid">
+        <item name="android:titleTextStyle">@style/Widget.Styled.ActionBar.Title</item>
+        <item name="android:displayOptions">showTitle|showCustom|homeAsUp</item>
+        <item name="android:background">@android:color/white</item>
+    </style>
+
+    <style name="Widget.Styled.ActionBar.Title" parent="TextAppearance.Sherlock.Widget.ActionBar.Title">
+        <item name="android:textSize">@dimen/abs__action_bar_title_text_size</item>
+        <item name="android:textColor">@color/label_text</item>
+    </style>
 </resources>

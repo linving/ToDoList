@@ -2,12 +2,9 @@
 <resources>
     <string-array name="classify">
         <item>@string/all</item>
-        <item>测试</item>
-        <item>测试</item>
-        <item>测试</item>
-        <item>测试</item>
-        <item>测试</item>
-        <item>测试</item>
+        <item>@string/life</item>
+        <item>@string/study</item>
+        <item>@string/work</item>
     </string-array>
 
     <string-array name="countries">
