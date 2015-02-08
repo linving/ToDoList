@@ -9,14 +9,20 @@ import sasure.myapplication.todolist.R;
 
 public class ContentItem implements ListItem {
 	 
-    private String mContent;
+    public String mTitle;
+    public String mType;
+    public String isDone;
+    public int _id;
 //    private final int itemWidth = MainActivity.screenWidth;
 //    private final int itemHeight = MainActivity.mContext.getResources().getDimensionPixelOffset(R.dimen.item_height);
 //    private final  int textSize = MainActivity.mContext.getResources().getDimensionPixelOffset(R.dimen.list_content_text);
 
-    public ContentItem(String mContent)
+    public ContentItem(int _id,String mTitle,String mType,String isDone)
     {
-        this.mContent = mContent;
+        this._id = _id;
+        this.mTitle = mTitle;
+        this.mType = mType;
+        this.isDone = isDone;
     }
 
     @Override
@@ -65,10 +71,11 @@ public class ContentItem implements ListItem {
 //        ll.addView(contentItem,params);
 //        ll.addView(toDelete,params);
 //
-        contentItem.setText(mContent);
+        contentItem.setText(mTitle);
 //
 //        convertView = ll;
 
         return convertView;
     }
+
 }

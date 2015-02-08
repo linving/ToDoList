@@ -8,8 +8,8 @@ public interface ListItem
 {
 
     public boolean isClickable();
-
     public int getLayout();
     public View getView(Context context, View convertView, LayoutInflater inflater);
-     
+//    public String getTitle();
+//    public String getType();
 }

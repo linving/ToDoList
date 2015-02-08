@@ -1,27 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="classify">
+        <item>@string/life</item>
+        <item>@string/study</item>
+        <item>@string/work</item>
+    </string-array>
+
+    <string-array name="type">
         <item>@string/all</item>
         <item>@string/life</item>
         <item>@string/study</item>
         <item>@string/work</item>
     </string-array>
 
+
     <string-array name="countries">
-        <item>Afghanistan</item>
-        <item>Albania</item>
-        <item>Algeria</item>
-        <item>American Samoa</item>
-        <item>Andorra</item>
-        <item>Angola</item>
-        <item>Anguilla</item>
-        <item>Antigua and Barbuda</item>
-        <item>Argentina</item>
-        <item>Armenia</item>
-        <item>Australia</item>
-        <item>Austria</item>
-        <item>Azerbajan</item>
-        <item>Bahamas</item>
+        <item>从明天起，做一个幸福的人</item>
+        <item>喂马、劈柴，周游世界</item>
+        <item>从明天起，关心粮食和蔬菜</item>
+        <item>我有一所房子，面朝大海，春暖花开</item>
+        <item>从明天起，和每一个亲人通信</item>
+        <item>告诉他们我的幸福</item>
+        <item>那幸福的闪电告诉我的</item>
+        <item>我将告诉每一个人</item>
+        <item>给每一条河每一座山取一个温暖的名字</item>
+        <item>陌生人，我也为你祝福</item>
+        <item>愿你有一个灿烂的前程</item>
+        <item>愿你有情人终成眷属</item>
+        <item>愿你在尘世获得幸福</item>
+        <item>我只愿面朝大海，春暖花开</item>
         <item>Bahrain</item>
         <item>Bangladesh</item>
         <item>Barbados</item>

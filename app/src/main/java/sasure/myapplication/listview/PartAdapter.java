@@ -71,12 +71,26 @@ public class PartAdapter extends BaseAdapter
         return tp;
     }
 
-    public void remove(int position)
-    {
-        Object tp = getItem(position);
-        mListItems.remove(tp);
-        this.notifyDataSetChanged();
-    }
+//    public void remove(int position)
+//    {
+//        Object tp = getItem(position);
+//     //   mListItems.remove(position);
+//        mListItems.remove(tp);
+//
+////        if (getCount() != position)
+////        {
+////            if (getItem(position).getClass() == LabelItem.class && getItem(position - 1).getClass() == LabelItem.class) {
+////                mListItems.remove(position - 1);
+////            }
+////        }
+////        else
+////        {
+////            if (getItem(position - 1).getClass() == LabelItem.class)
+////                mListItems.remove(position - 1);
+////        }
+//
+//        this.notifyDataSetChanged();
+//    }
 
     public void setSelectedPosition(int selectedPosition)
     {

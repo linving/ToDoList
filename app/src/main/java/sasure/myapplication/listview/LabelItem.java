@@ -34,5 +34,5 @@ public class LabelItem implements ListItem {
         title.setText(mLabel);
         return convertView;
     }
- 
+
 }

@@ -43,6 +43,6 @@
 
     <style name="Widget.Styled.ActionBar.Title" parent="TextAppearance.Sherlock.Widget.ActionBar.Title">
         <item name="android:textSize">@dimen/abs__action_bar_title_text_size</item>
-        <item name="android:textColor">@color/label_text</item>
+        <item name="android:textColor">@color/main_text_back</item>
     </style>
 </resources>

@@ -23,7 +23,9 @@
         </activity>
         <activity
             android:name=".EditActivity"
-            android:label="@string/title_activity_edit" >
+            android:label="@string/edit"
+            android:windowSoftInputMode="stateVisible|adjustResize"
+            >
         </activity>
     </application>
 

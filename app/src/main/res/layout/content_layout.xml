@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/item_height"
+    android:layout_height="@dimen/list_item_height"
     android:gravity="center_vertical|left"
     >
      <!--<TextView-->
@@ -19,15 +19,15 @@
     <TextView
         android:id="@+id/item_view"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/item_height"
+        android:layout_height="@dimen/list_item_height"
         android:textSize="@dimen/list_content_text"
-        android:textColor="@color/content_text"
-        android:gravity="center_vertical|left"
+        android:textColor="@color/main_text_back"
+        android:gravity="center_vertical"
+        android:singleLine="true"
         android:text="test"
         android:background="@drawable/content_background_x"
-        android:paddingLeft="@dimen/abs__dropdownitem_text_padding_left"
+
         />
-         />
 
         <!--<TextView-->
          <!--android:id="@+id/to_delete"-->

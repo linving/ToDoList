@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <string name="app_name">微清单</string>
-    <string name="action_settings">设置</string>
+    <string name="app_name">简·单</string>
     <string name="all">全部</string>
     <string name="study">学习</string>
     <string name="life">生活</string>
     <string name="work">工作</string>
-    <string name="to_delete">删除</string>
-    <string name="to_done">完成</string>
-    <string name="title_activity_edit">EditActivity</string>
-    <string name="hello_world">Hello world!</string>
-
+    <!--<string name="to_delete">删除</string>-->
+    <!--<string name="to_done">完成</string>-->
+    <string name="edit">编辑</string>
+    <string name="create">新建</string>
+    <string name="title">主题</string>
+    <string name="details">从明天起，做一个幸福的人</string>
+    <string name="confirm">确定</string>
+    <string name="unfinished">清单</string>
+    <string name="finished">已完成</string>
+    <string name="toast_unf_to_f">已归档</string>
+    <string name="toast_f_to_unf">已转回未完成</string>
+    <string name="delete">已删除</string>
 </resources>

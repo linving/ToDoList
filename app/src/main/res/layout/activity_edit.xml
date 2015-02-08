@@ -1,12 +1,48 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="sasure.myapplication.todolist.EditActivity">
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
 
-    <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <EditText
+        android:id="@+id/edit_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/edit_title_height"
+        android:hint="@string/title"
+        android:singleLine="true"
+        android:layout_alignParentTop="true"
+        android:maxLength="17"
+        android:textSize="@dimen/list_content_text"
 
-</RelativeLayout>
+        android:background="@drawable/edit1"
+        android:textColorHint="@color/label_text"
+        android:textColor="@color/main_text_back"
+        />
+
+    <Button
+        android:id="@+id/comfiem_button"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/edit_button_height"
+        android:layout_alignParentBottom="true"
+        android:text="@string/confirm"
+        android:background="@drawable/comfirm_button_bg_x"
+        android:textColor="@color/main_text_back"
+        />
+
+    <EditText
+        android:id="@+id/edit_details"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:hint="@string/details"
+        android:layout_below="@+id/edit_title"
+        android:layout_above="@+id/comfiem_button"
+        android:layout_centerInParent="true"
+        android:gravity="top"
+        android:background="@drawable/edit1"
+        android:textSize="@dimen/edit_details_text"
+        android:textColor="@color/main_text_back"
+        android:textColorHint="@color/label_text"
+        />
+
+
+    </RelativeLayout>
