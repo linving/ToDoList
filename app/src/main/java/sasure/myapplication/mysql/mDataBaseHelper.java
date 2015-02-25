@@ -59,7 +59,12 @@ public class mDataBaseHelper extends SQLiteOpenHelper
         return helper;
     }
 
-
+    /**
+     * 单例类，将构造函数隐藏
+     * @param context
+     * @param name
+     * @param version
+     */
     private mDataBaseHelper(Context context, String name, int version)
     {
         super(context, name, null, version);

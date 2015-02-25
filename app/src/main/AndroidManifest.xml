@@ -11,7 +11,7 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:screenOrientation="portrait"
-        android:theme="@style/myTheme" >
+        android:theme="@style/mainTheme" >
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name" >
@@ -23,10 +23,11 @@
         </activity>
         <activity
             android:name=".EditActivity"
+            android:theme="@style/editTheme"
             android:label="@string/edit"
-            android:windowSoftInputMode="stateVisible|adjustResize"
             >
         </activity>
     </application>
 
 </manifest>
+    <!--android:windowSoftInputMode="stateVisible|adjustResize"-->

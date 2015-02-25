@@ -5,8 +5,7 @@
     <string name="study">学习</string>
     <string name="life">生活</string>
     <string name="work">工作</string>
-    <!--<string name="to_delete">删除</string>-->
-    <!--<string name="to_done">完成</string>-->
+    <string name="to_delete">确定删除？</string>
     <string name="edit">编辑</string>
     <string name="create">新建</string>
     <string name="title">主题</string>
@@ -15,6 +14,9 @@
     <string name="unfinished">清单</string>
     <string name="finished">已完成</string>
     <string name="toast_unf_to_f">已归档</string>
-    <string name="toast_f_to_unf">已转回未完成</string>
+    <string name="toast_f_to_unf">转回未完成</string>
     <string name="delete">已删除</string>
+    <string name="subject_no_null">主题不能为空</string>
+    <string name="dismiss">确定放弃？</string>
+    <string name="sure">确定</string>
 </resources>

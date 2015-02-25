@@ -1,6 +1,8 @@
 package sasure.myapplication.todolist;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -15,15 +17,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.view.animation.AccelerateDecelerateInterpolator;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.view.animation.LayoutAnimationController;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.actionbarsherlock.app.ActionBar;
@@ -42,37 +43,139 @@ import sasure.myapplication.listview.slidecutListView;
 import sasure.myapplication.mysql.mDataBaseHelper;
 
 public class MainActivity extends SlidingListActivity implements slidecutListView.RemoveListener ,
-        ListView.OnItemClickListener,ListView.OnScrollListener
+        ListView.OnItemClickListener,ListView.OnScrollListener,DialogInterface.OnClickListener,
+        DialogInterface.OnCancelListener
 {
+    /**
+     * listView上划时按钮的透明度
+     */
     private final float upAlpha = 1f;
+
+    /**
+     * listView下划时按钮的透明度
+     */
     private final float downAlpha = 0.328f;
+
+    /**
+     * 按钮透明度变化动画时长
+     */
     private final long alphaDuration = 618;
 
+    /**
+     * 通知handle
+     */
     private final static int FLASH = 0x00;
-//    private boolean hasFinished;
-//    private boolean hasUnFinished;
-//    private int unFinishedPosition;
 
+    /**
+     * 通知初始化listview
+     */
+ //   private final static int INIT = 0x01;
+
+    /**
+     * 无内容
+     */
+    private final static int NO_CONTENT = 0x02;
+
+    /**
+     * 有内容
+     */
+    private final static int HAVE_CONTENT = 0x03;
+
+    /**
+     * 未完成清单的数量
+     */
     private int unFinishCount = 0;
+
+    /**
+     * 已完成清单的数量
+     */
     private int FinishCount = 0;
+
+    /**
+     * 未完成清单的标题
+     */
     private LabelItem unFinishLable;
+
+    /**
+     * 已完成清单的标题
+     */
     private LabelItem FinishLable;
 
+    /**
+     * 内容为空时
+     */
+    private View noContentView;
+
+    /**
+     * 主界面的FrameLayout
+     */
+    private FrameLayout mainLayout;
+
+
+
+    /**
+     * SlidingMenu对象
+     */
     private SlidingMenu slidingMenu;
+
+    /**
+     * 下拉选择框对象
+     */
     private Spinner mSpinner;
+
+    /**
+     * 保留包信息，并开放
+     */
     public static Context mContext;
-    private LayoutInflater mInflater;
+
+    /**
+     * 加载类
+     */
+ //   private LayoutInflater mInflater;
+
+    /**
+     * 保存listview的每行信息
+     */
     private ArrayList<ListItem> mListItems;
-  //  private PartAdapter listAdapter;
+
+    /**
+     * 加载ListViewActivity的ListView
+     */
     private slidecutListView mListView;
+
+    /**
+     * 保存屏幕宽度
+     */
     public static int screenWidth;
+
+    /**
+     * 主屏幕的添加按钮
+     */
     private ImageButton buttonAdd;
+
+    /**
+     * 保存数据库信息
+     */
     private SQLiteDatabase db;
+
     /**
      * 当前屏幕可见的第一个item在整个listview中的下标
      */
     private int firstIndex;
 
+    /**
+     * 确定删除对话框
+     */
+    private AlertDialog deleteDialog;
+
+    /**
+     * 当前选中行
+     */
+    private int position;
+
+    /**
+     * 初始化handler对象
+     */
     private final Handler handle = new Handler()
     {
         @Override
@@ -81,8 +184,18 @@ public class MainActivity extends SlidingListActivity implements slidecutListVie
             switch (msg.what)
             {
                 case FLASH:
-                    if(mListView != null)
+                    if (mListView == null)
+                        initListView();
+                    else
                         mListView.invalidateViews();
+                    break;
+
+                case NO_CONTENT:
+                    addNoContentView();
+                    break;
+
+                case HAVE_CONTENT:
+                    removeNoContentView();
                     break;
 
                 default:
@@ -90,6 +203,8 @@ public class MainActivity extends SlidingListActivity implements slidecutListVie
             }
         }
     };
+
+
 
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -99,7 +214,7 @@ public class MainActivity extends SlidingListActivity implements slidecutListVie
         initField();
         initActionbar();
         initSlidingMenu();
-        initListView();
+     //   initListView();
         initaddButton();
     }
 
@@ -172,33 +287,54 @@ public class MainActivity extends SlidingListActivity implements slidecutListVie
             mDataBaseHelper.getInstance().close();
     }
 
-
-
-
+    /**
+     * 初始化各种对象
+     */
     private void initField()
     {
         mContext = this;
-        mInflater = LayoutInflater.from(mContext);
+        //mInflater = LayoutInflater.from(mContext);
         mListItems = new ArrayList<>();
         screenWidth = ((WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getWidth();//一定要在ListView之前调用！！
         db = mDataBaseHelper.getInstance().getReadableDatabase();
         unFinishLable = new LabelItem(getResources().getString(R.string.unfinished));
         FinishLable = new LabelItem(getResources().getString(R.string.finished));
 
-        db.execSQL("PRAGMA foreign_keys=ON");
+        View tp = View.inflate(this,R.layout.dialog,null);
+        TextView tv = (TextView) tp.findViewById(R.id.dialog_textview);
+        tv.setText(getResources().getString(R.string.to_delete));
+        deleteDialog = createDialog(tp).setPositiveButton(getResources().getString(R.string.sure),this).setOnCancelListener(this)
+                .create();
+
+        noContentView = View.inflate(this,R.layout.no_content,null);
+        mainLayout = (FrameLayout) View.inflate(this,R.layout.activity_main,null);
+
+        db.execSQL("PRAGMA foreign_keys=ON");//开启sqlite的外键
   //      dd();
     }
 
-    private void dd()
+    private void addNoContentView()
     {
-    //    SQLiteDatabase db = databaseHelper.getReadableDatabase();
-
-        db.execSQL("insert into title_table(title,type) values('1','work')");
-        db.execSQL("insert into title_table(title,type) values('2','study')");
-        db.execSQL("insert into title_table(title,type) values('3','work')");
-        db.execSQL("insert into title_table(title,type) values('4','life')");
-        db.execSQL("insert into title_table(title,type) values('5','work')");
+        if(mainLayout.findViewById(R.id.no_content) == null)
+            mainLayout.addView(noContentView);
     }
+
+    private void removeNoContentView()
+    {
+        if(mainLayout.findViewById(R.id.no_content) != null)
+            mainLayout.removeView(noContentView);
+    }
+
+//    private void dd()
+//    {
+//    //    SQLiteDatabase db = databaseHelper.getReadableDatabase();
+//
+//        db.execSQL("insert into title_table(title,type) values('1','work')");
+//        db.execSQL("insert into title_table(title,type) values('2','study')");
+//        db.execSQL("insert into title_table(title,type) values('3','work')");
+//        db.execSQL("insert into title_table(title,type) values('4','life')");
+//        db.execSQL("insert into title_table(title,type) values('5','work')");
+//    }
 
     /**
      * 初始化ActionBar
@@ -234,6 +370,9 @@ public class MainActivity extends SlidingListActivity implements slidecutListVie
         });
     }
 
+    /**
+     * 刷新列表信息
+     */
     private void initListItems()
     {
  //       ArrayList<ContentItem> unFinished = new ArrayList<>();
@@ -299,11 +438,22 @@ public class MainActivity extends SlidingListActivity implements slidecutListVie
                         }
                     }
 
-                handle.sendEmptyMessage(FLASH);
+                if(!mListItems.isEmpty())
+                {
+                    handle.sendEmptyMessage(HAVE_CONTENT);
+
+                    handle.sendEmptyMessage(FLASH);
+                }
+                else
+                    handle.sendEmptyMessage(NO_CONTENT);
             }
         }).start();
     }
 
+    /**
+     * 根据下拉选择框选项的不同生成不同的查询语句
+     * @return
+     */
     private String getQueryStatement()
     {
         StringBuffer statement = new StringBuffer();
@@ -343,9 +493,10 @@ public class MainActivity extends SlidingListActivity implements slidecutListVie
      */
     private void initSlidingMenu()
     {
-        setContentView(R.layout.activity_main);
+        setContentView(mainLayout);
         setBehindContentView(R.layout.hidingview);
 
+     //   mainLayout.addView(noContentView);
         slidingMenu = getSlidingMenu();
         slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
         slidingMenu.setFadeEnabled(true);
@@ -377,7 +528,7 @@ public class MainActivity extends SlidingListActivity implements slidecutListVie
 
      //   listAdapter = new PartAdapter(mListItems, mContext);
 
-        mListView.setLayoutAnimation(getListAnim());
+    //    mListView.setLayoutAnimation(getListAnim());
         mListView.setAdapter(new PartAdapter(mListItems, mContext));
         mListView.setOnItemClickListener(this);
         mListView.setOnScrollListener(this);
@@ -400,10 +551,12 @@ public class MainActivity extends SlidingListActivity implements slidecutListVie
             }
         });
 
-        buttonAdd.setOnLongClickListener(new View.OnLongClickListener() {
+        buttonAdd.setOnLongClickListener(new View.OnLongClickListener()
+        {
             @Override
-            public boolean onLongClick(View v) {
-                dd();
+            public boolean onLongClick(View v)
+            {
+              //  dd();
                 initListItems();
                 return true;
             }
@@ -411,17 +564,17 @@ public class MainActivity extends SlidingListActivity implements slidecutListVie
     }
 
     /**
-     *
+     *  加载动画
      * @return 飞入效果
      */
-    private LayoutAnimationController getListAnim()
-    {
-        Animation layoutAnim = AnimationUtils.loadAnimation(this, R.anim.layout_anim);
-  //      layoutAnim.setDuration(550);
-
-        LayoutAnimationController controller = new LayoutAnimationController(layoutAnim);
-        return controller;
-    }
+//    public LayoutAnimationController getAnim()
+//    {
+//        Animation layoutAnim = AnimationUtils.loadAnimation(this, R.anim.layout_anim);
+//  //      layoutAnim.setDuration(550);
+//
+//        LayoutAnimationController controller = new LayoutAnimationController(layoutAnim);
+//        return controller;
+//    }
 
     @Override
     public void onBackPressed()
@@ -455,15 +608,14 @@ public class MainActivity extends SlidingListActivity implements slidecutListVie
             toggle();
             return true;
         }
-        return false;
-    }
 
+        return super.onKeyDown(keyCode,event);
+    }
 
     @Override
     public void removeItem(slidecutListView.RemoveDirection direction, int position)
     {
-
-
+        this.position = position;
    //     listAdapter.remove(position);
 
 //        if (listAdapter.getCount() != position)
@@ -480,10 +632,11 @@ public class MainActivity extends SlidingListActivity implements slidecutListVie
         switch (direction)
         {
             case RIGHT:
-                toDone(position);
+                toDone();
                 break;
             case LEFT:
-                toDelete(position);
+               // toDelete();
+                deleteDialog.show();
                 break;
 
 //            case BACK:
@@ -494,10 +647,21 @@ public class MainActivity extends SlidingListActivity implements slidecutListVie
                 break;
         }
 
-        mListView.invalidateViews();
+
     }
 
-    private void toDone(int position)
+    /**
+     * 创建对话框
+     */
+    private AlertDialog.Builder createDialog(View view)
+    {
+        return new AlertDialog.Builder(this).setView(view);
+    }
+
+    /**
+     * 右滑完成
+     */
+    private void toDone()
     {
         final String toFinish = "update " + mDataBaseHelper.TITLE_TABLE + " set " + mDataBaseHelper.ISDONE +
                 " = '" + mDataBaseHelper.TRUE + "'," + mDataBaseHelper.LOGTIME +" = " + mDataBaseHelper.CURRENTTIME +
@@ -560,12 +724,16 @@ public class MainActivity extends SlidingListActivity implements slidecutListVie
             Toast.makeText(this,getResources().getString(R.string.toast_f_to_unf), Toast.LENGTH_SHORT).show();
         }
 
+        handle.sendEmptyMessage(FLASH);
       //  changeElse(position);
    //     initListItems();
      //   listAdapter.notifyDataSetInvalidated();
     }
 
-    private void toDelete(final int position)
+    /**
+     * 左滑删除
+     */
+    private void toDelete()
     {
         final String statement = "delete from " + mDataBaseHelper.TITLE_TABLE + " where " + mDataBaseHelper._ID +" = ?";
         final ContentItem tp = (ContentItem) mListItems.get(position);
@@ -587,9 +755,16 @@ public class MainActivity extends SlidingListActivity implements slidecutListVie
         mListItems.remove(tp);
         removeLable();
 
+        if(mListItems.isEmpty())
+            handle.sendEmptyMessage(NO_CONTENT);
+
+        handle.sendEmptyMessage(FLASH);
         Toast.makeText(this,getResources().getString(R.string.delete), Toast.LENGTH_SHORT).show();
     }
 
+    /**
+     * 移除标题
+     */
     private void removeLable()
     {
         if(unFinishCount == 0)
@@ -637,6 +812,7 @@ public class MainActivity extends SlidingListActivity implements slidecutListVie
         bundle.putInt(mDataBaseHelper.TITLE_ID,item._id);
         bundle.putString(mDataBaseHelper.TITLE,item.mTitle);
         bundle.putString(mDataBaseHelper.TYPE,item.mType);
+        bundle.putString(mDataBaseHelper.ISDONE,item.isDone);
      //   bundle.putString(mDataBaseHelper.ISDONE,item.isDone);
 
         intent.putExtra(EditActivity.BUNDLE_CONTENT,bundle);
@@ -683,4 +859,17 @@ public class MainActivity extends SlidingListActivity implements slidecutListVie
     @Override
     public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount)
     {}
+
+    @Override
+    public void onClick(DialogInterface dialog, int which)
+    {
+        toDelete();
+        deleteDialog.dismiss();
+    }
+
+    @Override
+    public void onCancel(DialogInterface dialog)
+    {
+        mListView.scrollBack();
+    }
 }

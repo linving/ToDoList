@@ -10,7 +10,7 @@
         <item name="android:textColor">?attr/actionMenuTextColor</item>
         <item name="android:textAllCaps">@bool/abs__config_actionMenuItemAllCaps</item>
     </style><item name="abs__action_menu_divider" type="id"/><attr format="reference" name="titleTextStyle"/><dimen name="abs__dropdownitem_text_padding_right">8dip</dimen><style name="Widget.Sherlock.Light.ActionBar.TabBar.Inverse">
-    </style><attr format="reference" name="divider"/><dimen name="abs__action_bar_title_text_size">18dp</dimen><style name="Widget.Sherlock.Light.ActionBar.Solid">
+    </style><attr format="reference" name="divider"/><dimen name="abs__action_bar_title_text_size">19dp</dimen><style name="Widget.Sherlock.Light.ActionBar.Solid">
         <item name="titleTextStyle">@style/TextAppearance.Sherlock.Widget.ActionBar.Title</item>
         <item name="subtitleTextStyle">@style/TextAppearance.Sherlock.Widget.ActionBar.Subtitle</item>
         <item name="background">@drawable/abs__ab_solid_light_holo</item>

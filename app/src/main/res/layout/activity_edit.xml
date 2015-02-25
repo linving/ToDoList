@@ -13,10 +13,26 @@
         android:layout_alignParentTop="true"
         android:maxLength="17"
         android:textSize="@dimen/list_content_text"
-
-        android:background="@drawable/edit1"
-        android:textColorHint="@color/label_text"
+        android:background="@android:color/white"
+        android:textStyle="bold"
+        android:textColorHint="@color/subject_hint"
         android:textColor="@color/main_text_back"
+        android:paddingLeft="@dimen/edit_padding_left"
+        />
+
+    <EditText
+        android:id="@+id/edit_details"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:hint="@string/details"
+        android:layout_below="@+id/edit_title"
+        android:layout_centerInParent="true"
+        android:gravity="top"
+        android:background="@android:color/white"
+        android:textSize="@dimen/edit_details_text"
+        android:textColor="@color/main_text_back"
+        android:textColorHint="@color/label_text"
+        android:paddingLeft="@dimen/edit_padding_left"
         />
 
     <Button
@@ -27,22 +43,6 @@
         android:text="@string/confirm"
         android:background="@drawable/comfirm_button_bg_x"
         android:textColor="@color/main_text_back"
+        android:gravity="center"
         />
-
-    <EditText
-        android:id="@+id/edit_details"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:hint="@string/details"
-        android:layout_below="@+id/edit_title"
-        android:layout_above="@+id/comfiem_button"
-        android:layout_centerInParent="true"
-        android:gravity="top"
-        android:background="@drawable/edit1"
-        android:textSize="@dimen/edit_details_text"
-        android:textColor="@color/main_text_back"
-        android:textColorHint="@color/label_text"
-        />
-
-
     </RelativeLayout>

@@ -5,7 +5,6 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
-import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.OvershootInterpolator;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -209,7 +208,7 @@ public class slidecutListView extends ListView implements Animator.AnimatorListe
         ObjectAnimator mObAnimator = ObjectAnimator.ofFloat(this,"ItemScrollX",screenWidth);
         ObjectAnimator alphaAnimator = ObjectAnimator.ofFloat(itemView,"alpha",0);
 
-        set.setInterpolator(new AccelerateDecelerateInterpolator());
+   //     set.setInterpolator(new LinearInterpolator());
         set.setDuration((long) Math.abs(delta));
         set.playTogether(mObAnimator,alphaAnimator);
         set.addListener(this);
@@ -228,7 +227,7 @@ public class slidecutListView extends ListView implements Animator.AnimatorListe
         ObjectAnimator alphaAnimator = ObjectAnimator.ofFloat(itemView,"alpha",0);
 
         set.setDuration((long) Math.abs(delta));
-        set.setInterpolator(new AccelerateDecelerateInterpolator());
+    //    set.setInterpolator(new LinearInterpolator());
         set.playTogether(mObAnimator,alphaAnimator);
         set.addListener(this);
         set.start();
@@ -237,7 +236,7 @@ public class slidecutListView extends ListView implements Animator.AnimatorListe
     /**
      * 回到原位
      */
-    private void scrollBack()
+    public void scrollBack()
     {
         removeDirection = RemoveDirection.BACK;
         final float delta = itemView.getX();

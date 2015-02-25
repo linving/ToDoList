@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!--<color name="round_solid">#8ccdbe</color>-->
-    <!--<color name="round_stroke">#555555</color>-->
-    <!--<color name="list_item">#ffffffff</color>-->
     <color name="label_text">#96918d</color>
-    <!--<color name="content_text">#212121</color>-->
     <color name="press">#d7d7d7</color>
     <color name="no_press">#f3f3f3</color>
     <color name="main_text_back">#424242</color>
+    <color name="subject_hint">#999999</color>
+</resources>
+
+    <!--<color name="round_solid">#8ccdbe</color>-->
+    <!--<color name="round_stroke">#555555</color>-->
+    <!--<color name="list_item">#ffffffff</color>-->
     <!--<color name="to_delete">#ef8e92</color>-->
     <!--<color name="to_done">#8ccdbe</color>-->
-</resources>
+    <!--<color name="content_text">#212121</color>-->

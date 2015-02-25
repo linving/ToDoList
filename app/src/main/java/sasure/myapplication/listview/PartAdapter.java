@@ -16,7 +16,7 @@ public class PartAdapter extends BaseAdapter
     private ArrayList<ListItem> mListItems;
     private Context mContext;
     private LayoutInflater mInflater;
-    private int seletedPosition = -1;
+ //   private int seletedPosition = -1;
 
     public PartAdapter(ArrayList<ListItem> mListItems,Context mContext)
     {
@@ -92,8 +92,8 @@ public class PartAdapter extends BaseAdapter
 //        this.notifyDataSetChanged();
 //    }
 
-    public void setSelectedPosition(int selectedPosition)
-    {
-        this.seletedPosition = selectedPosition;
-    }
+//    public void setSelectedPosition(int selectedPosition)
+//    {
+//        this.seletedPosition = selectedPosition;
+//    }
 }

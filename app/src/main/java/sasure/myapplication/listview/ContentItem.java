@@ -42,6 +42,9 @@ public class ContentItem implements ListItem {
     {
         convertView = inflater.inflate(getLayout(), null);
         TextView contentItem = (TextView) convertView.findViewById(R.id.item_view);
+
+ //       ((LinearLayout)convertView).setLayoutAnimation(getAnim());
+
 //        TextView toDelete = (TextView) convertView.findViewById(R.id.to_delete);
 //        TextView toDone = (TextView) convertView.findViewById(R.id.to_done);
 //
@@ -77,5 +80,14 @@ public class ContentItem implements ListItem {
 
         return convertView;
     }
+
+//    public LayoutAnimationController getAnim()
+//    {
+//        Animation layoutAnim = AnimationUtils.loadAnimation(MainActivity.mContext, R.anim.layout_anim);
+//        //      layoutAnim.setDuration(550);
+//
+//        LayoutAnimationController controller = new LayoutAnimationController(layoutAnim);
+//        return controller;
+//    }
 
 }

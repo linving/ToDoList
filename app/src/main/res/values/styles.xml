@@ -5,7 +5,8 @@
         <!--&lt;!&ndash; Customize your theme here. &ndash;&gt;-->
     <!--</style>-->
 
-    <style name="myTheme" parent="Theme.Sherlock.Light">
+    <style name="mainTheme" parent="Theme.Sherlock.Light">
+        <item name="android:homeAsUpIndicator">@drawable/menu</item>
         <!--<item name="homeAsUpIndicator">@drawable/new_indicator</item>-->
         <!--<item name="android:homeAsUpIndicator">@drawable/new_indicator</item>-->
         <!--<item name="actionDropDownStyle">@style/mySpinner</item>-->
@@ -17,18 +18,22 @@
         <!--<item name="actionModeSplitBackground">@drawable/abs__cab_background_bottom_holo_dark</item>-->
     </style>
 
+    <style name="editTheme" parent="mainTheme">
+        <item name="android:homeAsUpIndicator">@drawable/dismiss</item>
+    </style>
+
     <!--<style name="myActionbar" parent="Widget.Sherlock.Light.ActionBar.Solid">-->
         <!--<item name="titleTextStyle">@style/TextAppearance.Sherlock.Widget.ActionBar.Title</item>-->
-        <!--&lt;!&ndash;<item name="background">@drawable/abs__ab_solid_light_holo</item>&ndash;&gt;-->
-        <!--&lt;!&ndash;<item name="backgroundStacked">@drawable/abs__ab_stacked_solid_light_holo</item>&ndash;&gt;-->
-        <!--&lt;!&ndash;<item name="backgroundSplit">@drawable/abs__ab_bottom_solid_light_holo</item>&ndash;&gt;-->
+        <!---<item name="background">@drawable/abs__ab_solid_light_holo</item>-->-->
+        <!---<item name="backgroundStacked">@drawable/abs__ab_stacked_solid_light_holo</item>-->-->
+        <!---<item name="backgroundSplit">@drawable/abs__ab_bottom_solid_light_holo</item>-->-->
         <!--<item name="divider">?attr/dividerVertical</item>-->
         <!--<item name="itemPadding">8dip</item>-->
     <!--</style>-->
 
     <!--<style name="AppTheme.Widget.TextView" parent="android:Widget.Holo.Light.TextView">-->
-        <!--&lt;!&ndash; Custom Attr&ndash;&gt;-->
-        <!--&lt;!&ndash;<item name="fontPath">fonts/Roboto-Bold.ttf</item>&ndash;&gt;-->
+        <!--- Custom Attr-->-->
+        <!---<item name="fontPath">fonts/Roboto-Bold.ttf</item>-->-->
     <!--</style>-->
 
     <!--<style name="mySpinner" parent="Widget.Sherlock.Light.Spinner.DropDown.ActionBar">-->
@@ -43,6 +48,7 @@
 
     <style name="Widget.Styled.ActionBar.Title" parent="TextAppearance.Sherlock.Widget.ActionBar.Title">
         <item name="android:textSize">@dimen/abs__action_bar_title_text_size</item>
+        <!--<item name="android:textStyle">bold</item>-->
         <item name="android:textColor">@color/main_text_back</item>
     </style>
 </resources>
