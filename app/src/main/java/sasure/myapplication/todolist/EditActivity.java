@@ -408,7 +408,6 @@ public class EditActivity extends Activity implements View.OnClickListener,
 //        finish();
 //    }
 
-
     /**
      * 若为编辑
      * @param newTitle
