@@ -111,8 +111,6 @@ public class MainActivity extends SlidingListActivity implements slidecutListVie
      */
     private FrameLayout mainLayout;
 
-
-
     /**
      * SlidingMenu对象
      */

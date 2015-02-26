@@ -2,17 +2,24 @@
 <items version="2" >
 
     <item
+        jar="E:\android\sdk\extras\android\m2repository\com\android\support\support-v4\18.0.0\support-v4-18.0.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="44ec51e9d395a47aab135e5e1b556c0007442156">
+        <dex dex="E:\androidworkspace\ToDoList\app\build\intermediates\pre-dexed\debug\support-v4-18.0.0-1ae302d0a823d4a9058371f11fbd3de24610a3a3.jar" />
+    </item>
+    <item
         jar="E:\androidworkspace\ToDoList\app\build\intermediates\exploded-aar\ToDoList.extras\slidingmenu\unspecified\classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="1bb3ec7d5d1d9cb0a3d1b6236e481aa738b0d8b5">
+        sha1="ef1bed9f5ab44cd0276f5abd7584843080dbdc07">
         <dex dex="E:\androidworkspace\ToDoList\app\build\intermediates\pre-dexed\debug\classes-157592902da09cc48e880f6a19874057a6c9fe25.jar" />
     </item>
     <item
         jar="E:\androidworkspace\ToDoList\app\build\intermediates\exploded-aar\ToDoList.extras\actionbarsherlock\unspecified\classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="599ad789acd43930ee4fb561bd009e627e473f9a">
+        sha1="ded67cc1827eb8e1f90f893a39481913a1a1fc27">
         <dex dex="E:\androidworkspace\ToDoList\app\build\intermediates\pre-dexed\debug\classes-8747ddaae7a3f504a16e31ced065ce91aa2b04ba.jar" />
     </item>
 
