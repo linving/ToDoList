@@ -210,7 +210,6 @@ public class MainActivity extends SlidingListActivity implements slidecutListVie
         initField();
         initActionbar();
         initSlidingMenu();
-     //   initListView();
         initaddButton();
     }
 
