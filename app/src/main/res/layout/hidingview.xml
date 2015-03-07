@@ -1,4 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
-</FrameLayout>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <Button
+        android:id="@+id/letter_to_user"
+        style="@style/menu_item_style"
+        android:text="@string/letter"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="15dp"/>
+
+    <Button
+        android:id="@+id/open_source"
+        style="@style/menu_item_style"
+        android:text="@string/open_source"
+        android:layout_below="@id/letter_to_user"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="15dp" />
+
+
+
+    <Button
+        android:id="@+id/feedback"
+        style="@style/menu_item_style"
+        android:text="@string/feedback"
+        android:layout_above="@+id/comment"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="15dp" />
+
+    <Button
+        android:id="@+id/comment"
+        style="@style/menu_item_style"
+        android:text="@string/comment"
+        android:layout_above="@+id/exit"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="15dp" />
+
+    <Button
+        android:id="@+id/exit"
+        style="@style/menu_item_style"
+        android:layout_gravity="bottom"
+        android:text="@string/exit"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="15dp"
+        />
+</RelativeLayout>

@@ -2,7 +2,7 @@
 <resources>
     <color name="label_text">#96918d</color>
     <color name="press">#d7d7d7</color>
-    <color name="no_press">#f3f3f3</color>
+    <color name="no_press">#E8E8E7</color>
     <color name="main_text_back">#424242</color>
     <color name="subject_hint">#999999</color>
 </resources>

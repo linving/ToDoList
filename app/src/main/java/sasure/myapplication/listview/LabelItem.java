@@ -7,10 +7,18 @@ import android.widget.TextView;
 
 import sasure.myapplication.todolist.R;
 
-public class LabelItem implements ListItem {
-
+/**
+ * 标题列表项
+ */
+public class LabelItem implements ListItem
+{
+    /**
+     * 标题
+     */
     private String mLabel;
-    public LabelItem(String label){
+
+    public LabelItem(String label)
+    {
         mLabel = label;
     }
 

@@ -17,15 +17,12 @@ import sasure.myapplication.todolist.MainActivity;
 import sasure.myapplication.todolist.R;
 
 /**
- * @blog http://blog.csdn.net/xiaanming
- * 
- * @author xiaanming
- * 
+ * 自定义列表
  */
 public class slidecutListView extends ListView implements Animator.AnimatorListener
 {
 	/**
-	 * 当前滑动的ListView　position
+	 * 当前滑动的position
 	 */
 	private int slidePosition;
 
@@ -42,7 +39,7 @@ public class slidecutListView extends ListView implements Animator.AnimatorListe
     /**
      * 保留第一次的X坐标
      */
-	private float firstDownX;
+//	private float firstDownX;
 
 	/**
 	 * 屏幕宽度
@@ -50,7 +47,7 @@ public class slidecutListView extends ListView implements Animator.AnimatorListe
 	private  final int  screenWidth = MainActivity.screenWidth;
 
 	/**
-	 * ListView的item
+	 * 具体的列表项
 	 */
 	private View itemView;
 
@@ -90,7 +87,7 @@ public class slidecutListView extends ListView implements Animator.AnimatorListe
 	private RemoveDirection removeDirection;
 
 	/**
-	 * 是否为标题
+	 * 是否为LabelItem项
 	 */
 	private boolean istitle ;
 
@@ -99,7 +96,9 @@ public class slidecutListView extends ListView implements Animator.AnimatorListe
      */
 //	private Context mContext;
 
-    // 滑动删除方向的枚举值
+    /**
+     *  滑动删除方向的枚举值
+     */
 	public enum RemoveDirection 
 	{
 		RIGHT, LEFT, BACK;
@@ -119,7 +118,6 @@ public class slidecutListView extends ListView implements Animator.AnimatorListe
     {
 		super(context, attrs, defStyle);
 		mTouchSlop = ViewConfiguration.get(getContext()).getScaledTouchSlop();
- //       mContext = context;
         set = new AnimatorSet();
 	}
 	
@@ -133,7 +131,7 @@ public class slidecutListView extends ListView implements Animator.AnimatorListe
 	}
 
 	/**
-	 * 分发事件，主要做的是判断点击的是那个item, 以及通过postDelayed来设置响应左右滑动事件
+	 * 分发事件，主要做的是判断点击的是那个item
 	 */
 	@Override
 	public boolean dispatchTouchEvent(MotionEvent event)
@@ -144,36 +142,23 @@ public class slidecutListView extends ListView implements Animator.AnimatorListe
             {
                 case MotionEvent.ACTION_DOWN:
 
-                    firstDownX = downX = event.getX();
+                    //firstDownX = downX = event.getX();
                     downY = event.getY();
 
-                    //addVelocityTracker(event);
-
-      //              Log.i("test","X="+downX+"  Y=" + downY);
-
-//                    float tpX = downX;
-//                    if(downX > screenWidth / 2)
-//                        tpX -= screenWidth / 2;
-
                     slidePosition = pointToPosition((int)downX, (int) downY);
-
-                    //Log.i("test", slidePosition + "");
 
                     // 无效的position, 不做任何处理
                     if (slidePosition == AdapterView.INVALID_POSITION)
                     {
-         //               Log.i("test","无效" +"   slidePosition="+slidePosition);
                         break;
                     }
-        //            Log.i("test","有效" +"   slidePosition="+slidePosition);
+
                     // 获取我们点击的item view
                     int position = slidePosition - getFirstVisiblePosition();
                     View tp = getChildAt(position);
 
-         //           Log.i("test","position="+position);
                     if (tp.findViewById(R.id.label_item) != null)//label_item的装载有变记得改
                     {
-                   //     Log.i("test1","istitle");
                         istitle = true;
                     }
                     else
@@ -188,7 +173,6 @@ public class slidecutListView extends ListView implements Animator.AnimatorListe
                             && Math.abs(event.getY() - downY) < mTouchSlop))
                             && istitle == false && slidePosition != AdapterView.INVALID_POSITION)
                     {
-                   //     Log.i("test1","move");
                         isSlide = true;
                     }
                    break;
@@ -198,7 +182,7 @@ public class slidecutListView extends ListView implements Animator.AnimatorListe
 	}
 
 	/**
-	 * 往右滑动，getScrollX()返回的是左边缘的距离，就是以View左边缘为原点到开始滑动的距离，所以向右边滑动为负值
+	 * 往右滑动
 	 */
 	private void scrollRight()
     {
@@ -208,7 +192,6 @@ public class slidecutListView extends ListView implements Animator.AnimatorListe
         ObjectAnimator mObAnimator = ObjectAnimator.ofFloat(this,"ItemScrollX",screenWidth);
         ObjectAnimator alphaAnimator = ObjectAnimator.ofFloat(itemView,"alpha",0);
 
-   //     set.setInterpolator(new LinearInterpolator());
         set.setDuration((long) Math.abs(delta));
         set.playTogether(mObAnimator,alphaAnimator);
         set.addListener(this);
@@ -216,7 +199,7 @@ public class slidecutListView extends ListView implements Animator.AnimatorListe
 	}
 
 	/**
-	 * 向左滑动，根据上面我们知道向左滑动为正值
+	 * 向左滑动
 	 */
 	private void scrollLeft()
     {
@@ -227,7 +210,6 @@ public class slidecutListView extends ListView implements Animator.AnimatorListe
         ObjectAnimator alphaAnimator = ObjectAnimator.ofFloat(itemView,"alpha",0);
 
         set.setDuration((long) Math.abs(delta));
-    //    set.setInterpolator(new LinearInterpolator());
         set.playTogether(mObAnimator,alphaAnimator);
         set.addListener(this);
         set.start();
@@ -282,22 +264,20 @@ public class slidecutListView extends ListView implements Animator.AnimatorListe
 	@Override
 	public boolean onTouchEvent(MotionEvent ev)
     {
-   //     Log.i("test","isSlide="+isSlide+"isnotRunning?="+!set.isRunning() + "itemViewisnotnull" +(itemView != null ));
-
 		if (!set.isRunning() && isSlide == true && itemView != null )
         {
 
 			requestDisallowInterceptTouchEvent(true);
-			//addVelocityTracker(ev);
+
 			final int action = ev.getAction();
 			float x = ev.getX();
+
 			switch (action)
             {
 			case MotionEvent.ACTION_DOWN:
 				break;
 
 			case MotionEvent.ACTION_MOVE:
-       //         Log.i("test", "getX=" + itemView.getX() + "downx=" + downX);
 				MotionEvent cancelEvent = MotionEvent.obtain(ev);
 	            cancelEvent.setAction(MotionEvent.ACTION_CANCEL |
 	                       (ev.getActionIndex()<< MotionEvent.ACTION_POINTER_INDEX_SHIFT));
@@ -305,12 +285,13 @@ public class slidecutListView extends ListView implements Animator.AnimatorListe
 
 				float deltaX = itemView.getX() - (downX - x);
 				downX = x;
-                float alphaRate =1 - Math.abs(itemView.getX()) / screenWidth;   //1 - Math.abs(firstDownX - downX) / firstDownX;
+                float alphaRate =1 - Math.abs(itemView.getX()) / screenWidth;
 
 				itemView.setX(deltaX);
                 itemView.setAlpha(alphaRate);
 
 				return true;  //拖动的时候ListView不滚动
+
 			case MotionEvent.ACTION_UP:
 					scrollByDistanceX();
     			    return true;
@@ -331,17 +312,12 @@ public class slidecutListView extends ListView implements Animator.AnimatorListe
         if(mRemoveListener == null)
             throw new NullPointerException("RemoveListener is null, we should called setRemoveListener()");
 
-     //   Log.i("test", "T");
-
         if(removeDirection != RemoveDirection.BACK)
             mRemoveListener.removeItem(removeDirection, slidePosition);
 
         isSlide = false;
-       // itemView.setVisibility(View.VISIBLE);
-   //     slidecutListView.this.deferNotifyDataSetChanged();
 
         set = new AnimatorSet();
-     //   itemView = null;
     }
 
     @Override
@@ -354,11 +330,19 @@ public class slidecutListView extends ListView implements Animator.AnimatorListe
     {
     }
 
+    /**
+     * 方便动画类调用
+     * @return
+     */
     public float getItemScrollX()
     {
         return itemView.getX();
     }
 
+    /**
+     * 方便动画类调用
+     * @param value
+     */
     public void setItemScrollX(float value)
     {
         itemView.setX(value);
@@ -392,28 +376,8 @@ public class slidecutListView extends ListView implements Animator.AnimatorListe
 //	}
 
 	/**
-	 * 获取X方向的滑动速度,大于0向右滑动，反之向左
-	 * 
-	 * @return
-	 */
-//	private int getScrollVelocity()
-//    {
-//		int velocity = 0;
-//		if(velocityTracker != null)
-//		{
-//	    	velocityTracker.computeCurrentVelocity(1000);
-//	    	velocity = (int) velocityTracker.getXVelocity();
-//		}
-//		return velocity;
-//	}
-
-	/**
-	 * 
 	 * 当ListView item滑出屏幕，回调这个接口
 	 * 我们需要在回调方法removeItem()中移除该Item,然后刷新ListView
-	 * 
-	 * @author xiaanming
-	 *
 	 */
 	public interface RemoveListener
     {

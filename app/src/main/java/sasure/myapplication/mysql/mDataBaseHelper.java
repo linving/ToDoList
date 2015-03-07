@@ -9,6 +9,7 @@ import android.util.Log;
 import sasure.myapplication.todolist.MainActivity;
 
 /**
+ * 数据库的辅助类
  * Created by ZHOU on 2015-2-5.
  */
 public class mDataBaseHelper extends SQLiteOpenHelper
@@ -45,6 +46,7 @@ public class mDataBaseHelper extends SQLiteOpenHelper
             DETAIL + " text null," +
             TITLE_ID + " integer references "+ TITLE_TABLE + "("+ _ID +") on delete cascade" +
             ")";
+
     private static mDataBaseHelper helper;
 
     /**

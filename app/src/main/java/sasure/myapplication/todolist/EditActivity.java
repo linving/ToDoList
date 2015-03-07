@@ -35,9 +35,6 @@ public class EditActivity extends Activity implements View.OnClickListener,
      * 获取Bundle的key
      */
     public static String BUNDLE_CONTENT = "bundle_content";
-   // public static final int GETRESULT =0x01;
- //   public static final String GETRESULT = "gerResult";
- //   private final static int FINISH = 0X00;
 
     /**
      * 放弃对话框
@@ -106,7 +103,6 @@ public class EditActivity extends Activity implements View.OnClickListener,
         initField();
     }
 
-
     /**
      * 初始化对象
      */
@@ -149,7 +145,7 @@ public class EditActivity extends Activity implements View.OnClickListener,
             title_id = bundle.getInt(mDataBaseHelper.TITLE_ID);
             type = bundle.getString(mDataBaseHelper.TYPE);
             isDone = bundle.getString(mDataBaseHelper.ISDONE);
-            getDetil();
+            getDetils();
 
             editInit();
             initContent();
@@ -193,7 +189,7 @@ public class EditActivity extends Activity implements View.OnClickListener,
     /**
      * 从details_table表读取对应的数据
      */
-    private void getDetil()
+    private void getDetils()
     {
         final String statement = "select " + mDataBaseHelper.DETAIL + " from " + mDataBaseHelper.DETAIL_TABLE +
                 " where " + mDataBaseHelper.TITLE_ID + " = ?";
@@ -246,9 +242,6 @@ public class EditActivity extends Activity implements View.OnClickListener,
      */
     private int typeToPosition(String type)
     {
-//        final String life = getResources().getString(R.string.life);
-//        final String study = getResources().getString(R.string.study);
-//        final String work = getResources().getString(R.string.work);
         int position = 0;
 
         switch (type)
@@ -272,22 +265,11 @@ public class EditActivity extends Activity implements View.OnClickListener,
         return position;
     }
 
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu)
-//    {
-//        // Inflate the menu; this adds items to the action bar if it is present.
-//        return true;
-//    }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item)
     {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
         if (id == android.R.id.home)
         {
             finishAndExit();
@@ -316,7 +298,6 @@ public class EditActivity extends Activity implements View.OnClickListener,
      */
     private void finishAndExit()
     {
-    //    if(canFinish() == true)
         String newTitle = editTitle.getText().toString();
         String newDetail = editDetails.getText().toString();
         String newType = positionToType(mSpinner.getSelectedItemPosition());
@@ -333,39 +314,6 @@ public class EditActivity extends Activity implements View.OnClickListener,
         else
             finish();
     }
-
-    /**
-     * 是否可以直接退出
-     * @return 可以或不可以
-     */
-//    private boolean canFinish()
-//    {
-//        String newTitle = editTitle.getText().toString();
-//        String newDetail = editDetails.getText().toString();
-//
-//        if(isEdit == true)
-//        {
-//            String newType = positionToType(mSpinner.getSelectedItemPosition());
-//
-//            if(!title.equals(newTitle) || !detail.equals(newDetail) || !type.equals(newType))
-//            {
-//                //显示对话框
-//                Toast.makeText(this,"不同",Toast.LENGTH_SHORT).show();
-//                return false;
-//            }
-//        }
-//        else
-//        {
-//            if(!newTitle.isEmpty() || !newDetail.isEmpty())
-//            {
-//                //显示对话框
-//                Toast.makeText(this,"确定放弃？",Toast.LENGTH_SHORT).show();
-//                return false;
-//            }
-//        }
-//
-//        return true;
-//    }
 
     @Override
     public void onClick(View v)
@@ -392,22 +340,6 @@ public class EditActivity extends Activity implements View.OnClickListener,
     {
        return new AlertDialog.Builder(this).setView(view);
     }
-
-//    private void finishAndPush()
-//    {
-//        Intent intent = getIntent();
-////        Bundle bundle = new Bundle();
-//
-////        bundle.putString(mDataBaseHelper.TITLE,title);
-////        bundle.putString(mDataBaseHelper.TYPE,type);
-////        bundle.putInt(mDataBaseHelper._ID,_id);
-//
-// //       intent.putExtra(GETRESULT,bundle);
-//        Log.i("tttt","finishAndPush");
-//        setResult(0,intent);
-//        finish();
-//    }
-
 
     /**
      * 若为编辑

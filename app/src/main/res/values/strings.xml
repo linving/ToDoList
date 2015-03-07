@@ -19,4 +19,9 @@
     <string name="subject_no_null">主题不能为空</string>
     <string name="dismiss">确定放弃？</string>
     <string name="sure">确定</string>
+    <string name="exit">退出</string>
+    <string name="letter">一封信</string>
+    <string name="comment">评价</string>
+    <string name="feedback">反馈</string>
+    <string name="open_source">开源地址</string>
 </resources>

@@ -202,8 +202,6 @@ public class MainActivity extends SlidingListActivity implements slidecutListVie
         }
     };
 
-
-
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
@@ -220,61 +218,9 @@ public class MainActivity extends SlidingListActivity implements slidecutListVie
     public void onResume()
     {
         super.onResume();
-      //  Log.i("tttt","onActivityResult");
+
         initListItems();
-
     }
-
-//    @Override
-//    public void onActivityResult(int requestCode,int resultCode,Intent intent)
-//    {
-//
-//        if(requestCode == 0 && resultCode == 0)
-//        {
-//            Log.i("tttt","onActivityResult");
-//            initListItems();
-////            Bundle bundle = intent.getBundleExtra(EditActivity.GETRESULT);
-////
-////            String newType = bundle.getString(mDataBaseHelper.TYPE);
-//////            String newTitle = bundle.getString(mDataBaseHelper.TITLE);
-//////
-////            if(shouldReflash(newType) == true)
-////            {
-////                initListItems();
-////            }
-//        }
-//    }
-
-//    private boolean shouldReflash(String newType)
-//    {
-//        String currentType = positionToType(mSpinner.getSelectedItemPosition());
-//
-//        if(currentType.equals(newType) || currentType.equals(mDataBaseHelper.ALL))
-//            return true;
-//
-//        return false;
-//    }
-
-//    private String positionToType(int position)
-//    {
-//        switch (position)
-//        {
-//            case 0:
-//                return  mDataBaseHelper.ALL;
-//
-//            case 1:
-//                return mDataBaseHelper.LIFE;
-//
-//            case 2:
-//                return  mDataBaseHelper.STUDY;
-//
-//            case 3:
-//                return mDataBaseHelper.WORK;
-//
-//            default:
-//                return  mDataBaseHelper.ALL;
-//        }
-//    }
 
     @Override
     public void onDestroy()
@@ -308,31 +254,29 @@ public class MainActivity extends SlidingListActivity implements slidecutListVie
         mainLayout = (FrameLayout) View.inflate(this,R.layout.activity_main,null);
 
         db.execSQL("PRAGMA foreign_keys=ON");//开启sqlite的外键
-  //      dd();
     }
 
+    /**
+     *添加无清单提示
+     */
     private void addNoContentView()
     {
         if(mainLayout.findViewById(R.id.no_content) == null)
             mainLayout.addView(noContentView);
+
+      //  mainLayout.invalidate();
     }
 
+    /**
+     * 移除无清单提示
+     */
     private void removeNoContentView()
     {
         if(mainLayout.findViewById(R.id.no_content) != null)
             mainLayout.removeView(noContentView);
-    }
 
-//    private void dd()
-//    {
-//    //    SQLiteDatabase db = databaseHelper.getReadableDatabase();
-//
-//        db.execSQL("insert into title_table(title,type) values('1','work')");
-//        db.execSQL("insert into title_table(title,type) values('2','study')");
-//        db.execSQL("insert into title_table(title,type) values('3','work')");
-//        db.execSQL("insert into title_table(title,type) values('4','life')");
-//        db.execSQL("insert into title_table(title,type) values('5','work')");
-//    }
+     //   mainLayout.invalidate();
+    }
 
     /**
      * 初始化ActionBar
@@ -439,11 +383,11 @@ public class MainActivity extends SlidingListActivity implements slidecutListVie
                 if(!mListItems.isEmpty())
                 {
                     handle.sendEmptyMessage(HAVE_CONTENT);
-
-                    handle.sendEmptyMessage(FLASH);
                 }
                 else
                     handle.sendEmptyMessage(NO_CONTENT);
+
+                handle.sendEmptyMessage(FLASH);
             }
         }).start();
     }
@@ -497,8 +441,8 @@ public class MainActivity extends SlidingListActivity implements slidecutListVie
      //   mainLayout.addView(noContentView);
         slidingMenu = getSlidingMenu();
         slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
-        slidingMenu.setFadeEnabled(true);
-        slidingMenu.setFadeDegree(0.5f);
+        slidingMenu.setFadeEnabled(false);
+        slidingMenu.setFadeDegree(0.618f);
         slidingMenu.setShadowDrawable(R.drawable.shadow);
         slidingMenu.setShadowWidthRes(R.dimen.slide_shadow_width);
         slidingMenu.setBehindWidthRes(R.dimen.behind_width);
@@ -533,6 +477,9 @@ public class MainActivity extends SlidingListActivity implements slidecutListVie
         mListView.setRemoveListener(this);
     }
 
+    /**
+     * 加载添加按钮
+     */
     public void initaddButton()
     {
         buttonAdd = (ImageButton) findViewById(R.id.button_add);
@@ -614,19 +561,7 @@ public class MainActivity extends SlidingListActivity implements slidecutListVie
     public void removeItem(slidecutListView.RemoveDirection direction, int position)
     {
         this.position = position;
-   //     listAdapter.remove(position);
 
-//        if (listAdapter.getCount() != position)
-//        {
-//            if (listAdapter.getItem(position).getClass() == LabelItem.class && listAdapter.getItem(position - 1).getClass() == LabelItem.class) {
-//                mListItems.remove(position - 1);
-//            }
-//        }
-//        else
-//        {
-//            if (listAdapter.getItem(position - 1).getClass() == LabelItem.class)
-//                mListItems.remove(position - 1);
-//        }
         switch (direction)
         {
             case RIGHT:
@@ -657,7 +592,7 @@ public class MainActivity extends SlidingListActivity implements slidecutListVie
     }
 
     /**
-     * 右滑完成
+     * 右滑完成触发
      */
     private void toDone()
     {
@@ -729,7 +664,7 @@ public class MainActivity extends SlidingListActivity implements slidecutListVie
     }
 
     /**
-     * 左滑删除
+     * 左滑删除触发
      */
     private void toDelete()
     {

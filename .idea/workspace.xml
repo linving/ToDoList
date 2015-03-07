@@ -47,12 +47,16 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="app: sasure.myapplication.todolist" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="9ddeddd7-5742-4d96-9936-9b3f181aefd8" name="Default" comment="git in android studio first">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/sasure/myapplication/todolist/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/sasure/myapplication/todolist/MainActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+=======
+    <list default="true" id="9ddeddd7-5742-4d96-9936-9b3f181aefd8" name="Default" comment="">
+>>>>>>> Stashed changes
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="My Application.iws" />
@@ -81,11 +85,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+<<<<<<< Updated upstream
       <file leaf-file-name="MainActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/sasure/myapplication/todolist/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="1.1114094" vertical-offset="1530" max-vertical-offset="14400">
               <caret line="171" column="25" selection-start-line="171" selection-start-column="25" selection-end-line="171" selection-end-column="25" />
+=======
+      <file leaf-file-name="EditActivity.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/sasure/myapplication/todolist/EditActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.29966703" vertical-offset="1674" max-vertical-offset="9486">
+              <caret line="132" column="0" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
+>>>>>>> Stashed changes
               <folding />
             </state>
           </provider>
@@ -100,6 +112,11 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="first" />
+      </map>
+    </option>
   </component>
   <component name="GitLogSettings">
     <option name="myStructureFilterPaths" />
@@ -2703,6 +2720,23 @@
     <property name="OverrideImplement.overriding.sorted" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="true" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="258" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="265" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="265" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="1058" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="258" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="265" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="265" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="1058" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
+    <property name="full.screen.before.presentation.mode" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -2904,6 +2938,18 @@
       <created>1421815884049</created>
       <updated>1421815884049</updated>
     </task>
+<<<<<<< Updated upstream
+=======
+    <task id="LOCAL-00001" summary="git in android studio first">
+      <created>1424958644996</created>
+      <updated>1424958644996</updated>
+    </task>
+    <task id="LOCAL-00002" summary="git in android studio first">
+      <created>1424959067630</created>
+      <updated>1424959067630</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+>>>>>>> Stashed changes
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -2927,11 +2973,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+<<<<<<< Updated upstream
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.32939914" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="527" y="223" width="935" height="644" />
+=======
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.32939914" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="275" y="103" width="1340" height="795" />
+>>>>>>> Stashed changes
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32939914" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32939914" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -2962,30 +3012,30 @@
     </layout>
     <layout-to-restore>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.32939914" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="275" y="103" width="1057" height="606" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32939914" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26609442" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32995737" sideWeight="0.4992658" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32939914" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32939914" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32995737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32939914" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2602118" sideWeight="0.5007342" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21428572" sideWeight="0.5007342" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26609442" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26612905" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Memory Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2693133" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
+      <window_info id="Memory Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.44193548" sideWeight="0.537065" order="12" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32939914" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24810892" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32939914" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32939914" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32995737" sideWeight="0.4992658" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1695279" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26774195" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2950644" sideWeight="0.46293494" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962178" sideWeight="0.4992658" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39939487" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32995737" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -3389,10 +3439,35 @@
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/app/src/main/java/sasure/myapplication/todolist/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.1114094" vertical-offset="1530" max-vertical-offset="14400">
           <caret line="171" column="25" selection-start-line="171" selection-start-column="25" selection-end-line="171" selection-end-column="25" />
+=======
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.5258427" vertical-offset="540" max-vertical-offset="61524">
+          <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
+          <folding>
+            <marker date="1424960126130" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/sasure/myapplication/todolist/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2646" max-vertical-offset="14382">
+          <caret line="222" column="24" selection-start-line="222" selection-start-column="24" selection-end-line="222" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/sasure/myapplication/todolist/EditActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29966703" vertical-offset="1674" max-vertical-offset="9486">
+          <caret line="132" column="0" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
+>>>>>>> Stashed changes
           <folding />
         </state>
       </provider>

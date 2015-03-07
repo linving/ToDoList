@@ -9,12 +9,25 @@ import android.widget.BaseAdapter;
 import java.util.ArrayList;
 
 /**
+ * 对BaseAdapter的一个继承，传入ListItem的集合，
+ * 通过判断不同的ListItem的实现类来生成不同的列表项
  * Created by ZHOU on 2015-1-26.
  */
 public class PartAdapter extends BaseAdapter
 {
+    /**
+     * 列表项
+     */
     private ArrayList<ListItem> mListItems;
+
+    /**
+     * 包信息
+     */
     private Context mContext;
+
+    /**
+     * 用来加载View
+     */
     private LayoutInflater mInflater;
  //   private int seletedPosition = -1;
 
@@ -54,46 +67,6 @@ public class PartAdapter extends BaseAdapter
     public View getView(int position, View convertView, ViewGroup parent)
     {
         View tp = mListItems.get(position).getView(mContext, convertView, mInflater);
-
-//        if(seletedPosition == position && mListItems.get(position).getClass() == ContentItem.class)
-//        {
-//            tp.setSelected(true);
-//            tp.setPressed(true);
-//            tp.setBackgroundColor(mContext.getResources().getColor(R.color.selected));
-//        }
-//        else
-//        {
-//            tp.setSelected(false);
-//            tp.setPressed(false);
-//            tp.setBackgroundColor(mContext.getResources().getColor(R.color.list_item));
-//        }
-
         return tp;
     }
-
-//    public void remove(int position)
-//    {
-//        Object tp = getItem(position);
-//     //   mListItems.remove(position);
-//        mListItems.remove(tp);
-//
-////        if (getCount() != position)
-////        {
-////            if (getItem(position).getClass() == LabelItem.class && getItem(position - 1).getClass() == LabelItem.class) {
-////                mListItems.remove(position - 1);
-////            }
-////        }
-////        else
-////        {
-////            if (getItem(position - 1).getClass() == LabelItem.class)
-////                mListItems.remove(position - 1);
-////        }
-//
-//        this.notifyDataSetChanged();
-//    }
-
-//    public void setSelectedPosition(int selectedPosition)
-//    {
-//        this.seletedPosition = selectedPosition;
-//    }
 }
