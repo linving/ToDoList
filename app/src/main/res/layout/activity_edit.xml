@@ -42,6 +42,7 @@
         android:layout_alignParentBottom="true"
         android:text="@string/confirm"
         android:background="@drawable/comfirm_button_bg_x"
+        android:textSize="@dimen/component_text_size"
         android:textColor="@color/main_text_back"
         android:gravity="center"
         />

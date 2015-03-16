@@ -37,7 +37,7 @@
     <dimen name="abs__action_bar_subtitle_bottom_margin">5dip</dimen>
     <dimen name="abs__action_bar_subtitle_text_size">14dp</dimen>
     <dimen name="abs__action_bar_subtitle_top_margin">-3dp</dimen>
-    <dimen name="abs__action_bar_title_text_size">19dp</dimen>
+    <dimen name="abs__action_bar_title_text_size">19sp</dimen>
     <dimen name="abs__action_button_min_width">56dip</dimen>
     <dimen name="abs__config_prefDialogWidth">320dp</dimen>
     <dimen name="abs__dropdownitem_icon_width">32dip</dimen>

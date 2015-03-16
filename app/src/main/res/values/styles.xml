@@ -6,7 +6,7 @@
     <!--</style>-->
 
     <style name="mainTheme" parent="Theme.Sherlock.Light">
-        <item name="android:homeAsUpIndicator">@drawable/menu</item>
+        <!--<item name="android:homeAsUpIndicator">@drawable/menu</item>-->
         <item name="android:windowBackground">@color/no_press</item>
         <item name="android:actionBarItemBackground">@drawable/ab_title_background_x</item>
         <!--<item name="homeAsUpIndicator">@drawable/new_indicator</item>-->
@@ -44,12 +44,12 @@
 
     <style name="Widget.Styled.ActionBar" parent="Widget.Sherlock.Light.ActionBar.Solid">
         <item name="android:titleTextStyle">@style/Widget.Styled.ActionBar.Title</item>
-        <item name="android:displayOptions">showTitle|showCustom|homeAsUp</item>
+        <item name="android:displayOptions">showTitle|showCustom</item>
         <item name="android:background">@android:color/white</item>
     </style>
 
     <style name="Widget.Styled.ActionBar.Title" parent="TextAppearance.Sherlock.Widget.ActionBar.Title">
-        <item name="android:textSize">@dimen/abs__action_bar_title_text_size</item>
+        <item name="android:textSize">@dimen/component_text_size</item>
         <!--<item name="android:textStyle">bold</item>-->
         <!--<item name="android:background">@drawable/ab_title_background_x</item>-->
         <item name="android:textColor">@color/main_text_back</item>

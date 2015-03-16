@@ -8,5 +8,6 @@
     android:singleLine="true"
     android:text="test"
     android:textColor="@color/main_text_back"
+    android:textSize="@dimen/component_text_size"
     android:gravity="center"
     />

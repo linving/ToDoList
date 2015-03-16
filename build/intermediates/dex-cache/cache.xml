@@ -12,14 +12,14 @@
         jar="E:\androidworkspace\ToDoList\app\build\intermediates\exploded-aar\ToDoList.extras\slidingmenu\unspecified\classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="ef1bed9f5ab44cd0276f5abd7584843080dbdc07">
+        sha1="28deec4f7557af9753e051c7ca7ad7d236cb0d39">
         <dex dex="E:\androidworkspace\ToDoList\app\build\intermediates\pre-dexed\debug\classes-157592902da09cc48e880f6a19874057a6c9fe25.jar" />
     </item>
     <item
         jar="E:\androidworkspace\ToDoList\app\build\intermediates\exploded-aar\ToDoList.extras\actionbarsherlock\unspecified\classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="ded67cc1827eb8e1f90f893a39481913a1a1fc27">
+        sha1="d78847b42eb8fb36e6f27df5e7d84bf1072e9d01">
         <dex dex="E:\androidworkspace\ToDoList\app\build\intermediates\pre-dexed\debug\classes-8747ddaae7a3f504a16e31ced065ce91aa2b04ba.jar" />
     </item>
 

@@ -208,6 +208,7 @@ public class EditActivity extends Activity implements View.OnClickListener,
     private void initActionbar()
     {
         ActionBar actionBar = getActionBar();
+        actionBar.setDisplayOptions(ActionBar.DISPLAY_HOME_AS_UP|ActionBar.DISPLAY_SHOW_TITLE|ActionBar.DISPLAY_SHOW_CUSTOM);
 
         ArrayAdapter<CharSequence> list = ArrayAdapter.createFromResource(this, R.array.classify, R.layout.spinner_item);
         list.setDropDownViewResource(R.layout.spinner_dropdown_item);

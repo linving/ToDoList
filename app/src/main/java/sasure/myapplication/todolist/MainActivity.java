@@ -11,7 +11,6 @@ import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 import android.view.Gravity;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,10 +27,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.actionbarsherlock.app.ActionBar;
+import com.actionbarsherlock.app.SherlockListActivity;
 import com.actionbarsherlock.internal.nineoldandroids.animation.ObjectAnimator;
-import com.actionbarsherlock.view.MenuItem;
-import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
-import com.jeremyfeinstein.slidingmenu.lib.app.SlidingListActivity;
 
 import java.util.ArrayList;
 
@@ -42,7 +39,7 @@ import sasure.myapplication.listview.PartAdapter;
 import sasure.myapplication.listview.slidecutListView;
 import sasure.myapplication.mysql.mDataBaseHelper;
 
-public class MainActivity extends SlidingListActivity implements slidecutListView.RemoveListener ,
+public class MainActivity extends SherlockListActivity implements slidecutListView.RemoveListener ,
         ListView.OnItemClickListener,ListView.OnScrollListener,DialogInterface.OnClickListener,
         DialogInterface.OnCancelListener
 {
@@ -114,7 +111,7 @@ public class MainActivity extends SlidingListActivity implements slidecutListVie
     /**
      * SlidingMenu对象
      */
-    private SlidingMenu slidingMenu;
+//    private SlidingMenu slidingMenu;
 
     /**
      * 下拉选择框对象
@@ -209,7 +206,7 @@ public class MainActivity extends SlidingListActivity implements slidecutListVie
 
         initField();
         initActionbar();
-        initSlidingMenu();
+//        initSlidingMenu();
         initaddButton();
     }
 
@@ -251,7 +248,7 @@ public class MainActivity extends SlidingListActivity implements slidecutListVie
 
         noContentView = View.inflate(this,R.layout.no_content,null);
         mainLayout = (FrameLayout) View.inflate(this,R.layout.activity_main,null);
-
+        setContentView(mainLayout);
         db.execSQL("PRAGMA foreign_keys=ON");//开启sqlite的外键
     }
 
@@ -283,6 +280,8 @@ public class MainActivity extends SlidingListActivity implements slidecutListVie
     private void initActionbar()
     {
         ActionBar actionBar = getSupportActionBar();
+    //    actionBar.setDisplayHomeAsUpEnabled(false);
+     //   actionBar.setDisplayShowHomeEnabled(false);
 
         ArrayAdapter<CharSequence> list =  ArrayAdapter.createFromResource(this, R.array.type, R.layout.spinner_item);
         list.setDropDownViewResource(R.layout.spinner_dropdown_item);
@@ -432,20 +431,20 @@ public class MainActivity extends SlidingListActivity implements slidecutListVie
     /**
      * 初始化SlidingMenu
      */
-    private void initSlidingMenu()
-    {
-        setContentView(mainLayout);
-        setBehindContentView(R.layout.hidingview);
-
-     //   mainLayout.addView(noContentView);
-        slidingMenu = getSlidingMenu();
-        slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
-        slidingMenu.setFadeEnabled(false);
-        slidingMenu.setFadeDegree(0.618f);
-        slidingMenu.setShadowDrawable(R.drawable.shadow);
-        slidingMenu.setShadowWidthRes(R.dimen.slide_shadow_width);
-        slidingMenu.setBehindWidthRes(R.dimen.behind_width);
-    }
+//    private void initSlidingMenu()
+//    {
+//        setContentView(mainLayout);
+//        setBehindContentView(R.layout.hidingview);
+//
+//     //   mainLayout.addView(noContentView);
+//        slidingMenu = getSlidingMenu();
+//        slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
+//        slidingMenu.setFadeEnabled(false);
+//        slidingMenu.setFadeDegree(0.618f);
+//        slidingMenu.setShadowDrawable(R.drawable.shadow);
+//        slidingMenu.setShadowWidthRes(R.dimen.slide_shadow_width);
+//        slidingMenu.setBehindWidthRes(R.dimen.behind_width);
+//    }
 
     /**
      * 初始化ListView
@@ -520,41 +519,41 @@ public class MainActivity extends SlidingListActivity implements slidecutListVie
 //        return controller;
 //    }
 
-    @Override
-    public void onBackPressed()
-    {
-        if (slidingMenu.isMenuShowing())
-            slidingMenu.showContent();
-        else
-            super.onBackPressed();
-    }
+//    @Override
+//    public void onBackPressed()
+//    {
+//        if (slidingMenu.isMenuShowing())
+//            slidingMenu.showContent();
+//        else
+//            super.onBackPressed();
+//    }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item)
-    {
-        switch (item.getItemId())
-        {
-            case android.R.id.home:
-                toggle();
-                return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item)
+//    {
+//        switch (item.getItemId())
+//        {
+//            case android.R.id.home:
+//                toggle();
+//                return true;
+//        }
+//        return super.onOptionsItemSelected(item);
+//    }
 
     /**
      * 菜单、返回键响应
      */
-    @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event)
-    {
-        if(keyCode == KeyEvent.KEYCODE_MENU)
-        {
-            toggle();
-            return true;
-        }
-
-        return super.onKeyDown(keyCode,event);
-    }
+//    @Override
+//    public boolean onKeyDown(int keyCode, KeyEvent event)
+//    {
+//        if(keyCode == KeyEvent.KEYCODE_MENU)
+//        {
+//            toggle();
+//            return true;
+//        }
+//
+//        return super.onKeyDown(keyCode,event);
+//    }
 
     @Override
     public void removeItem(slidecutListView.RemoveDirection direction, int position)
