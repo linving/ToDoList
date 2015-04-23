@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -163,6 +164,8 @@ public class MainActivity extends SherlockListActivity implements slidecutListVi
      */
     private AlertDialog deleteDialog;
 
+    public static final String PREFERENCE_NAME = "AndroidCommon";
+    public static final String FIRSTTIME = "FirstTime";
     /**
      * 当前选中行
      */
@@ -208,6 +211,40 @@ public class MainActivity extends SherlockListActivity implements slidecutListVi
         initActionbar();
 //        initSlidingMenu();
         initaddButton();
+        firstTime();
+    }
+
+    private void firstTime()
+    {
+        SharedPreferences preferences = getSharedPreferences(PREFERENCE_NAME,MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+
+        if(!preferences.getBoolean(FIRSTTIME,false))
+        {
+            String titleStatement = "insert into " + mDataBaseHelper.TITLE_TABLE + "(" + mDataBaseHelper.TITLE + "," +
+                    mDataBaseHelper.TYPE +") values('左划删除，右划归类','" + mDataBaseHelper.STUDY + "')";
+
+            db.execSQL(titleStatement);
+
+            final String selectStatement = "select distinct last_insert_rowid() from " + mDataBaseHelper.TITLE_TABLE;
+
+            Cursor cursor = db.rawQuery(selectStatement,null);
+            int title_id = 0;
+
+            if(cursor != null)
+                if(cursor.moveToFirst())
+                    title_id = cursor.getInt(0);
+
+            String contentStatement = "insert into " + mDataBaseHelper.DETAIL_TABLE + "(" + mDataBaseHelper.DETAIL +","+mDataBaseHelper.TITLE_ID+
+                    ") values('长按编辑,感谢您的支持！！',"+ title_id +")";
+
+            db.execSQL(contentStatement);
+
+            editor.putBoolean(FIRSTTIME,true);
+            editor.commit();
+        }
+
+     //   db.execSQL("insert into title_table(title,type) values('2','study')");
     }
 
     @Override
@@ -738,17 +775,22 @@ public class MainActivity extends SherlockListActivity implements slidecutListVi
         Intent intent = new Intent(this,EditActivity.class);
         Bundle bundle = new Bundle();
 
-        ContentItem item = (ContentItem) mListItems.get(position);
+        ContentItem item;
 
-        bundle.putInt(mDataBaseHelper.TITLE_ID,item._id);
-        bundle.putString(mDataBaseHelper.TITLE,item.mTitle);
-        bundle.putString(mDataBaseHelper.TYPE,item.mType);
-        bundle.putString(mDataBaseHelper.ISDONE,item.isDone);
-     //   bundle.putString(mDataBaseHelper.ISDONE,item.isDone);
+        if(mListItems.get(position).getClass() == ContentItem.class)
+        {
+            item = (ContentItem) mListItems.get(position);
 
-        intent.putExtra(EditActivity.BUNDLE_CONTENT,bundle);
+            bundle.putInt(mDataBaseHelper.TITLE_ID, item._id);
+            bundle.putString(mDataBaseHelper.TITLE, item.mTitle);
+            bundle.putString(mDataBaseHelper.TYPE, item.mType);
+            bundle.putString(mDataBaseHelper.ISDONE, item.isDone);
+            //   bundle.putString(mDataBaseHelper.ISDONE,item.isDone);
 
-        startActivity(intent);
+            intent.putExtra(EditActivity.BUNDLE_CONTENT, bundle);
+
+            startActivity(intent);
+        }
         //Toast.makeText(MainActivity.this,position+"",Toast.LENGTH_SHORT).show();
     }
 

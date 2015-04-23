@@ -13,8 +13,8 @@
     <string name="confirm">确定</string>
     <string name="unfinished">未完成</string>
     <string name="finished">已完成</string>
-    <string name="toast_unf_to_f">已归档</string>
-    <string name="toast_f_to_unf">转回未完成</string>
+    <string name="toast_unf_to_f">归入已完成</string>
+    <string name="toast_f_to_unf">归入未完成</string>
     <string name="delete">已删除</string>
     <string name="subject_no_null">主题不能为空</string>
     <string name="dismiss">确定放弃？</string>
