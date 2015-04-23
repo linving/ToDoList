@@ -65,9 +65,6 @@ $RECYCLE.BIN/
 # files for the dex VM
 *.dex
 
-# Java class files
-*.class
-
 # generated files
 bin/
 gen/
@@ -83,11 +80,10 @@ local.properties
 .bin
 .aar
 .settings/
-.DS_Store
 .idea/
 .gradle
 build/
 *.keystore
 out/
 *.iml
-local.properties
+*.txt
